@@ -24,10 +24,7 @@ export class App extends Component {
     if (dashboard) {
       return (
         <section>
-          <TopBar dashboard={dashboard} onInput={this.findCharacter2.bind(this)} onClick={this.findCharacter.bind(this)} />
-          <div class="noresult" style={{ display: character === false ? 'none' : 'block' }}>
-            No search results!
-          </div>
+          <TopBar dashboard={dashboard} onInput={this.findCharacterInput.bind(this)} onClick={this.findCharacter.bind(this)} />
           <div id="infocontainer">
             { 
               data.characters.map( char => (
@@ -81,7 +78,7 @@ export class App extends Component {
       alert('Please provide a character name to search for.')
     }
   }
-  findCharacter2(e) {
+  findCharacterInput(e) {
     let value
     if (e.keyCode == 13) {
       value = e.target.value
