@@ -9,8 +9,6 @@ export class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      scrollposition: 0,
-			equiped: "",
       characters: characters,
       character: characters[0],
       dashboard: true
@@ -37,9 +35,6 @@ export class App extends Component {
       return (
         <section>
           <TopBar dashboard={dashboard} showDashboard={this.showDashboard.bind(this)}/>
-          <div class="noresult" style={{ display: character === false ? 'none' : 'block' }}>
-            No search results!
-          </div>
           <div id="infocontainer">
             <DetailBox character={this.state.character}/>
           </div>
