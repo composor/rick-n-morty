@@ -98,7 +98,7 @@ export const characters = [
     id: '109'
   },
   {
-    name: 'Pricipal Vagina',
+    name: 'Principal Vagina',
     image: 'Principal_Vagina.png',
     description: 'Principal Gene Vagina is the principal of Harry Herpson High School. He is voiced by Phil Hendrie.',
     age: 'Unknown, possibly late 60\'s - early 70\'s',

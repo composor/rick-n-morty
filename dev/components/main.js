@@ -1,6 +1,5 @@
 import {h, Component} from 'composi'
 import {characters} from '../data/characters'
-import {search} from './search'
 import {TopBar} from './topbar'
 import {InfoBox} from './infobox'
 import {DetailBox} from './detailbox'
@@ -57,7 +56,7 @@ export class App extends Component {
   }
   findCharacter(e) {
     const input = this.element.querySelector('input')
-    value = input && input.value
+    const value = input && input.value
     
     const characters = this.state.characters
     if (value) {
@@ -74,22 +73,8 @@ export class App extends Component {
     }
   }
   findCharacterInput(e) {
-    let value
     if (e.keyCode == 13) {
-      value = e.target.value
-      const characters = this.state.characters
-      if (value) {
-        const character = characters.filter(char => {
-          const regex = new RegExp(value, 'img')
-          return char.name.match(regex)
-        })[0]
-        if (character) {
-          this.setState({character})
-          this.setState({dashboard: false})
-        }
-      } else {
-        alert('Please provide a character name to search for.')
-      }
+      this.findCharacter(e)
     }
   }
 }
